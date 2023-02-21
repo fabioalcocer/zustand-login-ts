@@ -18,13 +18,13 @@ export const requireAuth = (
       message: 'Unauthorized',
     })
 
-  jwt.verify(token, 'secretToken', (err, data) => {
+  jwt.verify(token, 'secretToken', (err, user) => {
     if (err)
       return res.status(401).json({
         message: 'Unauthorized',
       })
 
-    console.log(data)
+    req.user = user
     next()
   })
 }
