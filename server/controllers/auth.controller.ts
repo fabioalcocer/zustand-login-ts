@@ -4,7 +4,7 @@ import jwt from 'jsonwebtoken'
 export const loginHandler = (req: Request, res: Response) => {
   const token = jwt.sign(
     {
-      test: 'test',
+      name: 'UserTest123',
     },
     'secretToken',
     {
